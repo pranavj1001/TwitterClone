@@ -58,6 +58,17 @@
                 $('#toggleLogin').html("Sign up");     
             }        
         });
+        
+        $('#loginOrSignup').click(function(){
+            $.ajax({
+                type: "POST",
+                url: "actions.php?actions=loginSignup",
+                data:"email=" + $("#email").val() + "&password=" + $("#password").val() + "&loginActive=" + $("#loginActive").val(),
+                success: function(result){
+                    alert(result);
+                }
+            });
+        });
     </script>
 
   </body>
