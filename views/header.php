@@ -40,10 +40,10 @@
               </div>
             </li>-->
           </ul>
-          <form class="form-inline float-xs-right">
+          <div class="form-inline float-xs-right">
             <!-- Don't require the Search, but kept the code here so that in future if needed then it can be easily accessed.
             <input class="form-control" type="text" placeholder="Search">
             -->
-            <button class="btn btn-outline-success" type="submit">Login or Signup</button>
-          </form>
+            <button class="btn btn-outline-success" data-toggle="modal" data-target="#myModal">Login or Signup</button>
+          </div>
       </nav>
