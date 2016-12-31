@@ -1,6 +1,8 @@
 
-    <footer>
-        <p>&copy; Pranav Jain 1st Jan 2017 (Happy New Year) 01:23:34 </p>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Pranav Jain 1st Jan 2017 (Happy New Year) 01:23:34 </p>
+        </div>
     </footer>
 
 
