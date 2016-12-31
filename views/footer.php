@@ -18,18 +18,36 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            <h4 class="modal-title" id="myModalLabel">Login</h4>
           </div>
           <div class="modal-body">
-            ...
+            <form>
+              <input type="hidden" id="loginActive" name="loginActive" value="1">    
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email address">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password">
+              </div>
+            </form>
           </div>
           <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="toggleLogin">Sign up</button>
+              or
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-primary">Login</button>
           </div>
         </div>
       </div>
     </div>
+
+    <script>
+        $('#toggleLogin').click(function(){
+           alert("Hey"); 
+        });
+    </script>
 
   </body>
 </html>
