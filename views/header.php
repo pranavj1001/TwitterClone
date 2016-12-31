@@ -12,16 +12,20 @@
   <body>
       
       <nav class="navbar navbar-light bg-faded">
-          <a class="navbar-brand" href="#">Navbar</a>
+          <a class="navbar-brand" href="http://localhost/TwitterClone/index.php">Twitter</a>
           <ul class="nav navbar-nav">
+            <!--Don't require the Home, but kept the code here so that in future if needed then it can be easily accessed.
             <li class="nav-item active">
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>-->
+            <li class="nav-item">
+              <a class="nav-link" href="?page=feed">Your Feed</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="?page=tweets">Tweets</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="?page=users">Users</a>
             </li>
             <!-- Don't require the dropdown, but kept the code here so that in future if needed then it can be easily accessed.
             <li class="nav-item dropdown">
@@ -34,7 +38,9 @@
             </li>-->
           </ul>
           <form class="form-inline float-xs-right">
+            <!-- Don't require the Search, but kept the code here so that in future if needed then it can be easily accessed.
             <input class="form-control" type="text" placeholder="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            -->
+            <button class="btn btn-outline-success" type="submit">Login or Signup</button>
           </form>
       </nav>
