@@ -18,7 +18,7 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-            <h4 class="modal-title" id="myModalLabel">Login</h4>
+            <h4 class="modal-title" id="loginModalLabel">Log in</h4>
           </div>
           <div class="modal-body">
             <form>
@@ -37,7 +37,7 @@
             <button type="button" class="btn btn-primary" id="toggleLogin">Sign up</button>
               or
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Login</button>
+            <button type="button" class="btn btn-primary" id="loginOrSignup">Log in</button>
           </div>
         </div>
       </div>
@@ -45,7 +45,18 @@
 
     <script>
         $('#toggleLogin').click(function(){
-           alert("Hey"); 
+           
+            if($('#loginActive').val() === "1"){
+                $('#loginActive').val("0");
+                $('#loginModalLabel').html("Sign up");
+                $('#loginOrSignup').html("Sign up");
+                $('#toggleLogin').html("Log in");
+            }else{
+                $('#loginActive').val("1");
+                $('#loginModalLabel').html("Log in");
+                $('#loginOrSignup').html("Log in");
+                $('#toggleLogin').html("Sign up");     
+            }        
         });
     </script>
 
