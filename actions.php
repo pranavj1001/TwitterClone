@@ -27,6 +27,8 @@
             }else{
                 $query = "INSERT INTO users (`email`, `password`) VALUES('".mysqli_real_escape_string($link, $_POST['email'])."','".mysqli_real_escape_string($link, $_POST['password'])."')";
                 if(mysqli_query($link, $query)){
+                    $query = "UPDATE users SET password = '".md5(md5(mysqli_insert_id($link)).$_POST['password'])."' WHERE id = '".mysqli_insert_id($link)."' LIMIT 1";
+                    mysqli_query($link, $query);
                     echo "User added";
                 }else{
                     $error = "Sorry, our bad! Couldn't add ya, Please try again later";
