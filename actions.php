@@ -1,6 +1,6 @@
 <?php
 
-    //include("controller.php");
+    include("controller.php");
     
     if($_GET['actions'] == "loginSignup"){
         
@@ -20,6 +20,23 @@
         }
         
         if($_POST['loginActive'] == "0"){
+            $query = "SELECT * FROM users WHERE email = '".mysqli_real_escape_string($link, $_POST['email'])."' LIMIT 1";
+            $result = mysqli_query($link, $query);
+            if(mysqli_num_rows($result) > 0){
+                $error = "That email address is already taken";
+            }else{
+                $query = "INSERT INTO users (`email`, `password`) VALUES('".mysqli_real_escape_string($link, $_POST['email'])."','".mysqli_real_escape_string($link, $_POST['password'])."')";
+                if(mysqli_query($link, $query)){
+                    echo "User added";
+                }else{
+                    $error = "Sorry, our bad! Couldn't add ya, Please try again later";
+                }
+            }
+            
+            if($error != ""){
+            echo $error;
+            exit();
+            }
             
         }
     }
