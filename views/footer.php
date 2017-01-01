@@ -21,6 +21,7 @@
             <h4 class="modal-title" id="loginModalLabel">Log in</h4>
           </div>
           <div class="modal-body">
+            <div class="alert alert-danger" id="alert"></div>  
             <form>
               <input type="hidden" id="loginActive" name="loginActive" value="1">    
               <div class="form-group">
@@ -65,7 +66,11 @@
                 url: "actions.php?actions=loginSignup",
                 data:"email=" + $("#email").val() + "&password=" + $("#password").val() + "&loginActive=" + $("#loginActive").val(),
                 success: function(result){
-                    alert(result);
+                    if(result == "1"){
+                        window.location.assign("http://localhost/TwitterClone/index.php");
+                    }else{
+                        $('#alert').html(result).show();
+                    }
                 }
             });
         });

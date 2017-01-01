@@ -29,18 +29,27 @@
                 if(mysqli_query($link, $query)){
                     $query = "UPDATE users SET password = '".md5(md5(mysqli_insert_id($link)).$_POST['password'])."' WHERE id = '".mysqli_insert_id($link)."' LIMIT 1";
                     mysqli_query($link, $query);
-                    echo "User added";
+                    echo 1;
                 }else{
                     $error = "Sorry, our bad! Couldn't add ya, Please try again later";
                 }
+            }           
+        }else{
+            $query = "SELECT * FROM users WHERE email = '".mysqli_real_escape_string($link, $_POST['email'])."' LIMIT 1";
+            $result = mysqli_query($link, $query);
+            $row = mysqli_fetch_assoc($result);
+            if($row['password'] == md5(md5($row['id']).$_POST['password'])){
+                echo 1;
+            }else{
+                $error = "Sorry, could not find this user. Did you enter the correct login credentials?";
             }
-            
-            if($error != ""){
+        }
+        
+        if($error != ""){
             echo $error;
             exit();
-            }
-            
         }
+        
     }
 
 ?>
