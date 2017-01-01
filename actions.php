@@ -14,8 +14,10 @@
             $error = "Please enter a valid email address";
         }
         
-        if($error != "")
+        if($error != ""){
             echo $error;
+            exit();
+        }
         
         if($_POST['loginActive'] == "0"){
             
