@@ -27,7 +27,8 @@
             }else{
                 $query = "INSERT INTO users (`email`, `password`) VALUES('".mysqli_real_escape_string($link, $_POST['email'])."','".mysqli_real_escape_string($link, $_POST['password'])."')";
                 if(mysqli_query($link, $query)){
-                    $query = "UPDATE users SET password = '".md5(md5(mysqli_insert_id($link)).$_POST['password'])."' WHERE id = '".mysqli_insert_id($link)."' LIMIT 1";
+                    $_SESSION['id'] = mysqli_insert_id($link);
+                    $query = "UPDATE users SET password = '".md5(md5($_SESSION['id']).$_POST['password'])."' WHERE id = '".$_SESSION['id']."' LIMIT 1";
                     mysqli_query($link, $query);
                     echo 1;
                 }else{
@@ -40,6 +41,7 @@
             $row = mysqli_fetch_assoc($result);
             if($row['password'] == md5(md5($row['id']).$_POST['password'])){
                 echo 1;
+                $_SESSION['id'] = $row['id'];
             }else{
                 $error = "Sorry, could not find this user. Did you enter the correct login credentials?";
             }

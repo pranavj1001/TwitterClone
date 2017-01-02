@@ -16,7 +16,7 @@
   <body>
       
       <nav class="navbar navbar-light bg-faded">
-          <a class="navbar-brand" href="http://localhost/TwitterClone/index.php">Twitter</a>
+          <a class="navbar-brand" href="http://localhost/TwitterClone/">Twitter</a>
           <ul class="nav navbar-nav">
             <!--Don't require the Home, but kept the code here so that in future if needed then it can be easily accessed.
             <li class="nav-item active">
@@ -43,8 +43,11 @@
           </ul>
           <div class="form-inline float-xs-right">
             <!-- Don't require the Search, but kept the code here so that in future if needed then it can be easily accessed.
-            <input class="form-control" type="text" placeholder="Search">
-            -->
+            <input class="form-control" type="text" placeholder="Search">-->
+            <?php if(isset($_SESSION['id'])){ ?>   
+              <a class="btn btn-outline-success" href="?function=logout">Logout</a>
+            <?php }else{ ?>
             <button class="btn btn-outline-success" data-toggle="modal" data-target="#myModal">Login or Signup</button>
+            <?php } ?>  
           </div>
       </nav>

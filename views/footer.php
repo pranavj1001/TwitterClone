@@ -67,7 +67,7 @@
                 data:"email=" + $("#email").val() + "&password=" + $("#password").val() + "&loginActive=" + $("#loginActive").val(),
                 success: function(result){
                     if(result == "1"){
-                        window.location.assign("http://localhost/TwitterClone/index.php");
+                        window.location.assign("http://localhost/TwitterClone/");
                     }else{
                         $('#alert').html(result).show();
                     }

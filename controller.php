@@ -1,4 +1,6 @@
 <?php
+    
+    session_start();
 
     $link = mysqli_connect("localhost", "root", "", "twitterdatabase");
 
@@ -7,4 +9,7 @@
         exit();
     }
 
+    if (isset($_GET['function'])) {     
+        session_unset();
+    }
 ?>
