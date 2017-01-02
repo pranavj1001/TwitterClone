@@ -1,5 +1,5 @@
 # TwitterClone
-Based on Core principles of Twitter but based on my approach.
+Based on Core principles of Twitter but different in many ways.
 
 **This repo is under construction.**
 
