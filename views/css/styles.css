@@ -1,6 +1,37 @@
+nav.navbar.shrink {
+  min-height: 35px;
+}
+nav.navbar{
+  background-color: cornsilk;
+   // Animation
+   -webkit-transition: all 0.4s ease;
+   transition: all 0.4s ease;
+}
+.backgroud{
+    background-image: url(http://localhost/TwitterClone/img/mountains.jpg);
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .homePage{
     padding: 20px;
 }
+.heading{
+    margin-bottom: 20px;
+    font-size: 60px;
+    font-weight: 300;
+}
 .time{
     color: lightgray;
+}
+.tweet{
+    border: solid grey;
+    border-width: 1px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
 }

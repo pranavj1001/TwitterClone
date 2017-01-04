@@ -15,7 +15,7 @@
   </head>
   <body>
       
-      <nav class="navbar navbar-light bg-faded">
+      <nav class="navbar navbar-light navbar-fixed-top bg-faded">
           <a class="navbar-brand" href="http://localhost/TwitterClone/">Twitter</a>
           <ul class="nav navbar-nav">
             <!--Don't require the Home, but kept the code here so that in future if needed then it can be easily accessed.

@@ -74,6 +74,29 @@
                 }
             });
         });
+        
+        
+        $(window).scroll(function() {
+          if ($(document).scrollTop() > 50) {
+            $('nav').addClass('shrink');
+          } else {
+            $('nav').removeClass('shrink');
+          }
+        });
+        
+        window.onload = function(){
+            var heading = document.getElementById("homeHeading");
+            var count = 0;
+            setInterval(function(){
+                if(count == 4){
+                    heading.innerHTML = "Recent Tweets";
+                    count = 0;
+                }else{
+                    heading.innerHTML += ".";
+                    count++;
+                }
+            },1000);
+        }
     </script>
 
   </body>

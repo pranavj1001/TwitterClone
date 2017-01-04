@@ -58,9 +58,11 @@
                 $userQueryResult = mysqli_query($link, $userQuery);
                 $user = mysqli_fetch_assoc($userQueryResult);
                 
-                echo "<p>".$user['email']." <span class='time'>".timeSince(time() - strtotime($row['datetime']))." ago </span></p>";
+                echo "<div class='tweet'><p>".$user['email']." <span class='time'>".timeSince(time() - strtotime($row['datetime']))." ago </span></p>";
                 
-                echo($row['tweet']);
+                echo "<p>".$row['tweet']."</p>";
+                
+                echo "<p> Follow or UnFollow </p></div>";
                 
             }
         }
