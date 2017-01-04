@@ -15,15 +15,15 @@
         }
     }
 
-    function time_since($since) {
+    function timeSince($since) {
         $chunks = array(
             array(60 * 60 * 24 * 365 , 'year'),
             array(60 * 60 * 24 * 30 , 'month'),
             array(60 * 60 * 24 * 7, 'week'),
             array(60 * 60 * 24 , 'day'),
             array(60 * 60 , 'hour'),
-            array(60 , 'minute'),
-            array(1 , 'second')
+            array(60 , 'min'),
+            array(1 , 'secs')
         );
 
         for ($i = 0, $j = count($chunks); $i < $j; $i++) {
@@ -58,7 +58,7 @@
                 $userQueryResult = mysqli_query($link, $userQuery);
                 $user = mysqli_fetch_assoc($userQueryResult);
                 
-                echo "<p>".$user['email']."</p>";
+                echo "<p>".$user['email']." <span class='time'>".timeSince(time() - strtotime($row['datetime']))." ago </span></p>";
                 
                 echo($row['tweet']);
                 
