@@ -15,6 +15,29 @@
         }
     }
 
+    function time_since($since) {
+        $chunks = array(
+            array(60 * 60 * 24 * 365 , 'year'),
+            array(60 * 60 * 24 * 30 , 'month'),
+            array(60 * 60 * 24 * 7, 'week'),
+            array(60 * 60 * 24 , 'day'),
+            array(60 * 60 , 'hour'),
+            array(60 , 'minute'),
+            array(1 , 'second')
+        );
+
+        for ($i = 0, $j = count($chunks); $i < $j; $i++) {
+            $seconds = $chunks[$i][0];
+            $name = $chunks[$i][1];
+            if (($count = floor($since / $seconds)) != 0) {
+                break;
+            }
+        }
+
+        $print = ($count == 1) ? '1 '.$name : "$count {$name}s";
+        return $print;
+    }
+
     function displayTweets($type){
         
         global $link;
@@ -30,9 +53,15 @@
         if(mysqli_num_rows($result) == 0){
             echo "There are no tweets right now to show. Why don't you start tweeting? :)";
         }else{
-            while($row == mysqli_fetch_assoc($result)){
+            while($row = mysqli_fetch_assoc($result)){
                 $userQuery = "SELECT * FROM users WHERE id = ".mysqli_real_escape_string($link, $row['userid'])." LIMIT 1";
                 $userQueryResult = mysqli_query($link, $userQuery);
+                $user = mysqli_fetch_assoc($userQueryResult);
+                
+                echo "<p>".$user['email']."</p>";
+                
+                echo($row['tweet']);
+                
             }
         }
         
