@@ -9,7 +9,19 @@
         exit();
     }
 
-    if (isset($_GET['function'])) {     
-        session_unset();
+    if (isset($_GET['function'])) {
+        if($_GET['function'] == "logout"){
+            session_unset();
+        }
     }
+
+    function displayTweets($type){
+        if($type == "public"){
+            $whereClause = "";
+        }
+        
+        $query = "SELECT * FROM tweets ".$whereClause." ORDER BY `datetime` DESC";
+        
+    }
+    
 ?>
