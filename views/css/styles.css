@@ -2,7 +2,7 @@ nav.navbar.shrink {
   min-height: 35px;
 }
 nav.navbar{
-  background-color: cornsilk;
+  background-color: aliceblue;
    // Animation
    -webkit-transition: all 0.4s ease;
    transition: all 0.4s ease;
@@ -24,10 +24,10 @@ nav.navbar{
     font-weight: 300;
 }
 .time{
-    color: lightgray;
+    color: aqua;
 }
 .tweet{
-    border: solid grey;
+    border: solid aquamarine;
     border-width: 1px;
     border-radius: 5px;
     padding: 10px;

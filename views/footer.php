@@ -84,6 +84,7 @@
           }
         });
         
+        //wrote the code below in pure js because I just wanted to test myself, to see if I still remember the syntax ;)
         window.onload = function(){
             var heading = document.getElementById("homeHeading");
             var count = 0;
