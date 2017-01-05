@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="http://localhost/TwitterClone/views/css/styles.css">
     <link rel="stylesheet" href="http://localhost/TwitterClone/views/css/footerStyle.css">
       
+    <!-- Arima Madurai Font -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">  
+      
   </head>
   <body>
       

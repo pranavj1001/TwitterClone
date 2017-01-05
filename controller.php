@@ -60,7 +60,7 @@
                 
                 echo "<div class='tweet'><p><b>".$user['email']."</b> <span class='time'>".timeSince(time() - strtotime($row['datetime']))." ago </span></p>";
                 
-                echo "<p>".$row['tweet']."</p>";
+                echo "<p><span class='tweetText'>".$row['tweet']."</span></p>";
                 
                 echo "<p> Follow or UnFollow </p></div>";
                 
@@ -75,8 +75,21 @@
               <div class="form-group">
                 <input type="text" class="form-control" id="searchBox" placeholder="Search">
               </div>
-              <button class="btn btn-primary">Search</button>
-             </div';
+              <button type="submit" class="btn btn-primary">Search</button>
+             </div>';
+    }
+
+    function displayTweetBox(){
+        if (isset($_SESSION['id'])) {
+            if($_SESSION['id'] > 0){
+                echo '<div class="form newTweetArea">
+              <div class="form-group">
+                <textarea type="text" class="form-control" id="tweetContent" placeholder="Enter your tweets here...."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Post Tweet</button>
+             </div>';
+            }
+        }
     }
     
 ?>

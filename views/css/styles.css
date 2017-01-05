@@ -38,3 +38,10 @@ nav.navbar{
 .searchArea{
     margin-top: 20px;
 }
+.newTweetArea{
+    margin-top: 50px;
+    height: 100px;
+}
+.tweetText{
+    font-family: 'Ubuntu', sans-serif;
+}
