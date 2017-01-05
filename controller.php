@@ -68,5 +68,15 @@
         }
         
     }
+
+
+    function displaySearch(){
+        echo '<div class="form-inline searchArea">
+              <div class="form-group">
+                <input type="text" class="form-control" id="searchBox" placeholder="Search">
+              </div>
+              <button class="btn btn-primary">Search</button>
+             </div';
+    }
     
 ?>

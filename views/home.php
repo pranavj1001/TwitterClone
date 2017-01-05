@@ -5,6 +5,8 @@
           <h2 class="heading" id="homeHeading">Recent Tweets</h2>
           <?php displayTweets('public'); ?>
       </div>
-      <div class="col-md-4"></div>
+      <div class="col-md-4">
+          <?php displaySearch(); ?>
+      </div>
     </div>
 </div>
