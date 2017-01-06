@@ -87,10 +87,17 @@
         //wrote the code below in pure js because I just wanted to test myself, to see if I still remember the syntax ;)
         window.onload = function(){
             var heading = document.getElementById("homeHeading");
+            var headingNumber = 0;
+            if(heading.innerHTML === "Tweets for You"){
+                headingNumber = 1;
+            }
             var count = 0;
             setInterval(function(){
                 if(count == 4){
-                    heading.innerHTML = "Recent Tweets";
+                    if(headingNumber == 0)
+                        heading.innerHTML = "Recent Tweets";
+                    if(headingNumber == 1)
+                        heading.innerHTML = "Tweets for You";
                     count = 0;
                 }else{
                     heading.innerHTML += ".";

@@ -41,28 +41,77 @@
     function displayTweets($type){
         
         global $link;
+        $whereClause = "";
+        $endQuery = 0;
         
         if($type == "public"){
+            
             $whereClause = "";
+            
+        }else if($type == "isFollowing"){
+            
+            if(isset($_SESSION['id'])){
+                
+                $query = "SELECT * FROM followingdata WHERE follower = ".mysqli_real_escape_string($link, $_SESSION['id']);
+                
+                $result = mysqli_query($link, $query);
+                
+                while($row = mysqli_fetch_assoc($result)){
+                    
+                    if($whereClause == "")
+                        $whereClause = "WHERE ";
+                    else
+                        $whereClause .= " OR ";
+                    
+                    $whereClause .= "userid = ".$row['isFollowing'];
+                }
+                
+                if(($row =  mysqli_fetch_assoc($result)) == 0 ){
+                    $endQuery = 1;
+                }
+            }
         }
         
         $query = "SELECT * FROM tweets ".$whereClause." ORDER BY `datetime` DESC";
         
         $result = mysqli_query($link, $query);
         
-        if(mysqli_num_rows($result) == 0){
+        if(mysqli_num_rows($result) == 0 || $endQuery == 1){
+            
             echo "There are no tweets right now to show. Why don't you start tweeting? :)";
+            
         }else{
             while($row = mysqli_fetch_assoc($result)){
+                
                 $userQuery = "SELECT * FROM users WHERE id = ".mysqli_real_escape_string($link, $row['userid'])." LIMIT 1";
+                
                 $userQueryResult = mysqli_query($link, $userQuery);
+                
                 $user = mysqli_fetch_assoc($userQueryResult);
                 
                 echo "<div class='tweet'><p><b>".$user['email']."</b> <span class='time'>".timeSince(time() - strtotime($row['datetime']))." ago </span></p>";
                 
                 echo "<p><span class='tweetText'>".$row['tweet']."</span></p>";
                 
-                echo "<p><button class='btn btn-outline-primary toggleFollow' data-userId='".$row['userid']."'> Follow </button></p></div>";
+                echo "<p><button class='btn btn-outline-primary toggleFollow' data-userId='".$row['userid']."'>";
+                
+                if(isset($_SESSION['id'])){
+                    $followingQuery = "SELECT * FROM followingdata WHERE follower = '".mysqli_real_escape_string($link, $_SESSION['id'])."' AND isFollowing = '".mysqli_real_escape_string($link, $row['userid'])."' LIMIT 1";
+                    
+                    $followingResult = mysqli_query($link, $followingQuery);
+                    
+                    if(mysqli_num_rows($followingResult) > 0){
+                        
+                       echo "UnFollow";
+                        
+                    }else{
+                        
+                        echo "Follow";
+                        
+                    }
+                }
+                
+                echo "</button></p></div>";
                 
             }
         }
