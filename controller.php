@@ -62,7 +62,7 @@
                 
                 echo "<p><span class='tweetText'>".$row['tweet']."</span></p>";
                 
-                echo "<p> Follow or UnFollow </p></div>";
+                echo "<p><button class='btn btn-outline-primary toggleFollow' data-userId='".$row['userid']."'> Follow </button></p></div>";
                 
             }
         }

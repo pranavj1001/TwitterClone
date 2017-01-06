@@ -97,7 +97,18 @@
                     count++;
                 }
             },1000);
-        }
+        };
+        
+        $(".toggleFollow").click(function(){
+            $.ajax({
+                type: "POST",
+                url: "actions.php?actions=toggleFollow",
+                data:"userId=" + $(this).attr("data-userId"),
+                success: function(result){
+                    alert(result);
+                }
+            });
+        });
     </script>
 
   </body>
