@@ -100,12 +100,19 @@
         };
         
         $(".toggleFollow").click(function(){
+            
+            var id = $(this).attr("data-userId");
+            
             $.ajax({
                 type: "POST",
                 url: "actions.php?actions=toggleFollow",
-                data:"userId=" + $(this).attr("data-userId"),
+                data:"userId=" + id,
                 success: function(result){
-                    alert(result);
+                    if(result == "1"){
+                        $("button[data-userId='" + id +"']").html("Follow");
+                    }else if(result == "2"){
+                        $("button[data-userId='" + id +"']").html("UnFollow");
+                    }
                 }
             });
         });
