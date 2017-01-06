@@ -138,3 +138,8 @@ nav.navbar{
 .tip3:hover .tiptext3 {
     visibility: visible;
 }
+
+.hrStyle{
+    background-color: aquamarine;
+    margin-top: 29px;
+}

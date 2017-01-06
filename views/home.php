@@ -7,6 +7,7 @@
       </div>
       <div class="col-md-4">
           <?php displaySearch(); ?>
+          <hr class="hrStyle">
           <?php displayTweetBox(); ?>
       </div>
     </div>
