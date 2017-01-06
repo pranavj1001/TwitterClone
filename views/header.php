@@ -25,14 +25,18 @@
             <li class="nav-item active">
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>-->
-            <li class="nav-item">
+            <li class="nav-item tip1">
               <a class="nav-link" href="?page=feed">Your Feed</a>
+                <span class="tiptext1">Click here to view your feed</span>
             </li>
-            <li class="nav-item">
+            <li class="nav-item tip2">
               <a class="nav-link" href="?page=tweets">Tweets</a>
+                <span class="tiptext2">Click here to view your tweets</span>
+
             </li>
-            <li class="nav-item">
+            <li class="nav-item tip3">
               <a class="nav-link" href="?page=users">Users</a>
+                <span class="tiptext3">Click here to view users</span>
             </li>
             <!-- Don't require the dropdown, but kept the code here so that in future if needed then it can be easily accessed.
             <li class="nav-item dropdown">

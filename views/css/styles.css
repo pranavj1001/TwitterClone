@@ -1,12 +1,14 @@
 nav.navbar.shrink {
   min-height: 35px;
 }
+
 nav.navbar{
   background-color: aliceblue;
    // Animation
    -webkit-transition: all 0.4s ease;
    transition: all 0.4s ease;
 }
+
 .backgroud{
     background-image: url(http://localhost/TwitterClone/img/mountains.jpg);
     height: 500px;
@@ -15,17 +17,21 @@ nav.navbar{
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .homePage{
     padding: 20px;
 }
+
 .heading{
     margin-bottom: 20px;
     font-size: 60px;
     font-weight: 300;
 }
+
 .time{
     color: aqua;
 }
+
 .tweet{
     border: solid aquamarine;
     border-width: 1px;
@@ -35,13 +41,100 @@ nav.navbar{
     margin-bottom: 20px;
     margin-right: 20px;
 }
+
 .searchArea{
     margin-top: 20px;
 }
+
 .newTweetArea{
     margin-top: 50px;
     height: 100px;
 }
+
 .tweetText{
     font-family: 'Ubuntu', sans-serif;
+}
+
+.tip1 .tiptext1 {
+    visibility: hidden;
+    width: 140px;
+    background-color: gray;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+ 
+    position: absolute;
+    z-index: 1;
+}
+
+.tip1 .tiptext1::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 25%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent gray transparent;
+}
+
+.tip1:hover .tiptext1 {
+    visibility: visible;
+}
+
+.tip2 .tiptext2 {
+    visibility: hidden;
+    width: 140px;
+    background-color: gray;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+ 
+    position: absolute;
+    z-index: 1;
+}
+
+.tip2 .tiptext2::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 20%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent gray transparent;
+}
+
+.tip2:hover .tiptext2 {
+    visibility: visible;
+}
+
+.tip3 .tiptext3 {
+    visibility: hidden;
+    width: 140px;
+    background-color: gray;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+ 
+    position: absolute;
+    z-index: 1;
+}
+
+.tip3 .tiptext3::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 15%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent gray transparent;
+}
+
+.tip3:hover .tiptext3 {
+    visibility: visible;
 }
