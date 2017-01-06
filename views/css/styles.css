@@ -1,12 +1,19 @@
+.inputStyle:focus{
+    -webkit-box-shadow: 8px 8px 15px -6px #999;
+    -moz-box-shadow: 8px 8px 15px -6px #999;
+    box-shadow: 8px 8px 15px -6px #999;
+}
 nav.navbar.shrink {
-  min-height: 35px;
+    min-height: 35px;
 }
 
 nav.navbar{
-  background-color: aliceblue;
-   // Animation
-   -webkit-transition: all 0.4s ease;
-   transition: all 0.4s ease;
+    background-color: aliceblue;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
 }
 
 .backgroud{
@@ -16,6 +23,9 @@ nav.navbar{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
 }
 
 .homePage{
@@ -40,6 +50,9 @@ nav.navbar{
     margin-top: 20px;
     margin-bottom: 20px;
     margin-right: 20px;
+    -webkit-box-shadow: 8px 8px 15px -6px #999;
+    -moz-box-shadow: 8px 8px 15px -6px #999;
+    box-shadow: 8px 8px 15px -6px #999;
 }
 
 .searchArea{

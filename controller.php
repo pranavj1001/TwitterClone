@@ -73,7 +73,7 @@
     function displaySearch(){
         echo '<div class="form-inline searchArea">
               <div class="form-group">
-                <input type="text" class="form-control" id="searchBox" placeholder="Search">
+                <input type="text" class="form-control inputStyle" id="searchBox" placeholder="Search">
               </div>
               <button type="submit" class="btn btn-primary">Search</button>
              </div>';
@@ -84,7 +84,7 @@
             if($_SESSION['id'] > 0){
                 echo '<div class="form newTweetArea">
               <div class="form-group">
-                <textarea type="text" class="form-control" id="tweetContent" placeholder="Enter your tweets here...."></textarea>
+                <textarea type="text" class="form-control inputStyle" id="tweetContent" placeholder="Enter your tweets here...."></textarea>
               </div>
               <button type="submit" class="btn btn-primary">Post Tweet</button>
              </div>';
