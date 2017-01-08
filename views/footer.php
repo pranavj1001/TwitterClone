@@ -123,13 +123,6 @@
                 }
             });
         });
-        
-        $("#postTweet").click(function(){
-            
-            alert($("#tweetContent").val());
-            
-        });
-        
     </script>
 
   </body>

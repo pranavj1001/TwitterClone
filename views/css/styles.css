@@ -157,3 +157,11 @@ nav.navbar{
     background-color: aquamarine;
     margin-top: 29px;
 }
+
+#tweetSuccess{
+    display: none;
+}
+
+#tweetFailure{
+    display: none;
+}

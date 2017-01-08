@@ -66,9 +66,9 @@
                     $whereClause .= "userid = ".$row['isFollowing'];
                 }
                 
-//                if(($row =  mysqli_fetch_assoc($result)) == 0 ){
-//                    $endQuery = 1;
-//                }
+                if(($row =  mysqli_fetch_assoc($result)) == 0 ){
+                    $endQuery = 1;
+                }
             }
         }
         
@@ -135,7 +135,7 @@
               <div class="form-group">
                 <textarea type="text" class="form-control inputStyle" id="tweetContent" placeholder="Enter your tweets here...."></textarea>
               </div>
-              <button type="submit" id="postTweet" class="btn btn-primary">Post Tweet</button>
+              <button type="submit" class="btn btn-primary">Post Tweet</button>
              </div>';
             }
         }
