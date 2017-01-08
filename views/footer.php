@@ -123,6 +123,20 @@
                 }
             });
         });
+        
+        $("#postTweetButton").click(function(){
+            
+            $.ajax({
+                type: "POST",
+                url: "actions.php?actions=postTweet",
+                data:"tweetContent=" + $("#tweetContent").val(),
+                success: function(result){
+                    alert(result);
+                }
+            });
+            
+        });
+        
     </script>
 
   </body>

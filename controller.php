@@ -23,7 +23,7 @@
             array(60 * 60 * 24 , 'day'),
             array(60 * 60 , 'hour'),
             array(60 , 'min'),
-            array(1 , 'secs')
+            array(1 , 'sec')
         );
 
         for ($i = 0, $j = count($chunks); $i < $j; $i++) {
@@ -66,9 +66,9 @@
                     $whereClause .= "userid = ".$row['isFollowing'];
                 }
                 
-                if(($row =  mysqli_fetch_assoc($result)) == 0 ){
-                    $endQuery = 1;
-                }
+//                if(($row =  mysqli_fetch_assoc($result)) == 0 ){
+//                    $endQuery = 1;
+//                }
             }
         }
         
@@ -131,11 +131,13 @@
     function displayTweetBox(){
         if (isset($_SESSION['id'])) {
             if($_SESSION['id'] > 0){
-                echo '<div class="form newTweetArea">
+                echo '<div id="tweetSucces" class="alert alert-success">Your tweet was posted successfully!</div>
+                      <div id="tweetFailure" class="alert alert-danger"></div>
+              <div class="form newTweetArea">
               <div class="form-group">
                 <textarea type="text" class="form-control inputStyle" id="tweetContent" placeholder="Enter your tweets here...."></textarea>
               </div>
-              <button type="submit" class="btn btn-primary">Post Tweet</button>
+              <button type="submit" id="postTweetButton" class="btn btn-primary">Post Tweet</button>
              </div>';
             }
         }
