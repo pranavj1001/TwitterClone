@@ -65,11 +65,25 @@
                     if($check)
                         echo "1";
                 }else{
-                    $check = mysqli_query($link, "INSERT INTO followingdata (follower, isFollowing) VALUES (".mysqli_real_escape_string($link, $_SESSION['id']).",".mysqli_real_escape_string($link, $_POST['userId']).")");
+                    $check = mysqli_query($link, "INSERT INTO followingdata (`follower`, `isFollowing`) VALUES (".mysqli_real_escape_string($link, $_SESSION['id']).",".mysqli_real_escape_string($link, $_POST['userId']).")");
                     if($check)
                         echo "2";
                 }
            // }
+        }
+    }
+
+
+    if($_GET['actions'] == 'postTweet'){
+        if(!$_POST['tweetContent']){
+            echo "Snap! We didn't found any content in your tweet";
+        }else if(strlen($_POST['tweetContent']) > 140){
+            echo "Your tweet is too long. Please make necessary changes";
+        }else{
+            //echo "Post Successful";
+            $query = "INSERT INTO tweets (`tweet`, `userid`, `datetime`) VALUES('".mysqli_real_escape_string($link, $_POST['tweetContent'])."',".mysqli_real_escape_string($link, $_SESSION['id']).", NOW())";
+            mysqli_query($link, $query);
+            echo "1";
         }
     }
 

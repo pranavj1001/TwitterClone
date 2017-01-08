@@ -3,8 +3,10 @@
     include("controller.php");
     include("views/header.php");
     
-    if($_GET['page'] == 'feed'){
-        include("views/feed.php");
+    if(isset($_GET['page'])){
+        if($_GET['page'] == 'feed'){
+            include("views/feed.php");
+        }
     }else{
         include("views/home.php");
     }

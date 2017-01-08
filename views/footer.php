@@ -123,6 +123,26 @@
                 }
             });
         });
+        
+        $("#postTweetButton").click(function(){
+            
+            $.ajax({
+                type: "POST",
+                url: "actions.php?actions=postTweet",
+                data:"tweetContent=" + $("#tweetContent").val(),
+                success: function(result){
+                    if(result == "1"){
+                        $("#tweetSuccess").show();
+                        $("#tweetFailure").hide();
+                    }else if(result != "1"){
+                        $("#tweetFailure").html(result).show();
+                        $("#tweetSuccess").hide();
+                    }
+                }
+            });
+            
+        });
+        
     </script>
 
   </body>

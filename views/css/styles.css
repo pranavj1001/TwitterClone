@@ -61,7 +61,7 @@ nav.navbar{
 }
 
 .newTweetArea{
-    margin-top: 50px;
+    margin-top: 29px;
     height: 100px;
 }
 
@@ -156,4 +156,12 @@ nav.navbar{
 .hrStyle{
     background-color: aquamarine;
     margin-top: 29px;
+}
+
+#tweetSuccess{
+    display: none;
+}
+
+#tweetFailure{
+    display: none;
 }
