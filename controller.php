@@ -135,7 +135,15 @@
     function displayTweetBox(){
         if (isset($_SESSION['id'])) {
             if($_SESSION['id'] > 0){
+<<<<<<< HEAD
                 echo '<div id="tweetSuccess" class="alert alert-success">Your tweet was posted successfully!</div>
+=======
+<<<<<<< HEAD
+                echo '<div id="tweetSuccess" class="alert alert-success">Your tweet was posted successfully!</div>
+=======
+                echo '<div id="tweetSucces" class="alert alert-success">Your tweet was posted successfully!</div>
+>>>>>>> origin/master
+>>>>>>> origin/master
                       <div id="tweetFailure" class="alert alert-danger"></div>
               <div class="form newTweetArea">
               <div class="form-group">

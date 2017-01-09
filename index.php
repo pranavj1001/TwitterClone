@@ -7,9 +7,12 @@
         if($_GET['page'] == 'feed'){
             include("views/feed.php");
         }
+<<<<<<< HEAD
         if($_GET['page'] == 'tweets'){
             include("views/yourTweets.php");
         }
+=======
+>>>>>>> origin/master
     }else{
         include("views/home.php");
     }

@@ -136,6 +136,10 @@
                 url: "actions.php?actions=postTweet",
                 data:"tweetContent=" + $("#tweetContent").val(),
                 success: function(result){
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/master
                     if(result == "1"){
                         $("#tweetSuccess").show();
                         $("#tweetFailure").hide();
@@ -143,6 +147,12 @@
                         $("#tweetFailure").html(result).show();
                         $("#tweetSuccess").hide();
                     }
+<<<<<<< HEAD
+=======
+=======
+                    alert(result);
+>>>>>>> origin/master
+>>>>>>> origin/master
                 }
             });
             
