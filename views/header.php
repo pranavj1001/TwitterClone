@@ -26,11 +26,19 @@
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>-->
             <li class="nav-item tip1">
-              <a class="nav-link" href="?page=feed">Your Feed</a>
+                <?php if(isset($_SESSION['id'])){ ?>
+                <a class="nav-link" href="?page=feed">Your Feed</a>
+                <?php }else{ ?>
+                <a class="nav-link" href="?page=feed">Feed</a>
+                <?php }?>
                 <span class="tiptext1">Click here to view your feed</span>
             </li>
             <li class="nav-item tip2">
-              <a class="nav-link" href="?page=tweets">Tweets</a>
+                <?php if(isset($_SESSION['id'])){ ?>
+                <a class="nav-link" href="?page=tweets">Your Tweets</a>
+                <?php }else{ ?>
+                <a class="nav-link" href="?page=tweets">Tweets</a>
+                <?php }?>
                 <span class="tiptext2">Click here to view your tweets</span>
 
             </li>

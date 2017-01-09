@@ -91,6 +91,9 @@
             if(heading.innerHTML === "Tweets for You"){
                 headingNumber = 1;
             }
+            if(heading.innerHTML === "Your Tweets"){
+                headingNumber = 2;
+            }
             var count = 0;
             setInterval(function(){
                 if(count == 4){
@@ -98,6 +101,8 @@
                         heading.innerHTML = "Recent Tweets";
                     if(headingNumber == 1)
                         heading.innerHTML = "Tweets for You";
+                    if(headingNumber == 2)
+                        heading.innerHTML = "Your Tweets";
                     count = 0;
                 }else{
                     heading.innerHTML += ".";
@@ -123,6 +128,26 @@
                 }
             });
         });
+        
+        $("#postTweetButton").click(function(){
+            
+            $.ajax({
+                type: "POST",
+                url: "actions.php?actions=postTweet",
+                data:"tweetContent=" + $("#tweetContent").val(),
+                success: function(result){
+                    if(result == "1"){
+                        $("#tweetSuccess").show();
+                        $("#tweetFailure").hide();
+                    }else if(result != "1"){
+                        $("#tweetFailure").html(result).show();
+                        $("#tweetSuccess").hide();
+                    }
+                }
+            });
+            
+        });
+        
     </script>
 
   </body>
