@@ -8,9 +8,9 @@ Hey there,
   
   This site is visually very different and is basically my approach to build a relatively complex website like Twitter.
   
-  I've used MVC Framework to build this website.
+  I've used **MVC Framework** to build this website.
   
-  I've used Bootstrap to develop this project. [More about Bootstrap](http://getbootstrap.com/getting-started/)
+  I've used **Bootstrap** to develop this project. [More about Bootstrap](http://getbootstrap.com/getting-started/)
   
 **What is MVC?**
 
