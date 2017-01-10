@@ -154,6 +154,7 @@
                     if(result == "1"){
                         $("#tweetSuccess").show();
                         $("#tweetFailure").hide();
+                        location.reload();
                     }else if(result != "1"){
                         $("#tweetFailure").html(result).show();
                         $("#tweetSuccess").hide();
