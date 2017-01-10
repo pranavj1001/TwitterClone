@@ -166,6 +166,6 @@ nav.navbar{
     display: none;
 }
 
-.searchString{
+.searchString, .display{
     font-size: 25px;
 }
