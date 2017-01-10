@@ -139,6 +139,7 @@
             if($type == "public"){
 
                 $whereClause = "";
+                
                 $endQuery = 0;
 
             }else if($type == "isFollowing"){
@@ -150,6 +151,10 @@
                 $endQuery = 1;
 
             }else if($type == "search"){
+                
+                echo '<p class="searchString">Showing results for "'.mysqli_real_escape_string($link, $_GET['query']).'"</p>';
+                
+                $whereClause = "WHERE tweet LIKE '%".mysqli_real_escape_string($link, $_GET['query'])."%' ";
                 
                 $endQuery = 0;
                 
@@ -209,6 +214,7 @@
 
 
     function displaySearch(){
+        
         echo '<form class="form-inline searchArea">
               <div class="form-group">
                 <input type="hidden" name="page" value="search">
@@ -216,11 +222,15 @@
               </div>
               <button type="submit" class="btn btn-primary">Search</button>
              </form>';
+        
     }
 
     function displayTweetBox(){
+        
         if (isset($_SESSION['id'])) {
+            
             if($_SESSION['id'] > 0){
+                
                 echo '<div id="tweetSuccess" class="alert alert-success">Your tweet was posted successfully!</div>
                       <div id="tweetFailure" class="alert alert-danger"></div>
               <div class="form newTweetArea">
@@ -229,8 +239,11 @@
               </div>
               <button type="submit" id="postTweetButton" class="btn btn-primary">Post Tweet</button>
              </div>';
+                
             }
+            
         }
+        
     }
     
 ?>
