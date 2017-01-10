@@ -126,7 +126,7 @@
 
                     $user = mysqli_fetch_assoc($userQueryResult);
 
-                    echo "<div class='tweet'><p><b>".$user['email']."</b> <span class='time'>".timeSince(time() - strtotime($row['datetime']))." ago </span></p>";
+                    echo "<div class='tweet'><p><b><a href='?page=users&userid=".$user['id']."'>".$user['email']."</a></b> <span class='time'>".timeSince(time() - strtotime($row['datetime']))." ago </span></p>";
 
                     echo "<p><span class='tweetText'>".$row['tweet']."</span></p>";
 
@@ -229,7 +229,7 @@
 
                     $user = mysqli_fetch_assoc($userQueryResult);
 
-                    echo "<div class='tweet'><p><b>".$user['email']."</b> <span class='time'>".timeSince(time() - strtotime($row['datetime']))." ago </span></p>";
+                    echo "<div class='tweet'><p><b><a href='?page=users&userid=".$user['id']."'>".$user['email']."</a></b> <span class='time'>".timeSince(time() - strtotime($row['datetime']))." ago </span></p>";
 
                     echo "<p><span class='tweetText'>".$row['tweet']."</span></p>";
 
