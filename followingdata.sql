@@ -23,33 +23,34 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Table structure for table `followingdata`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `followingdata` (
   `id` int(11) NOT NULL,
-  `email` text NOT NULL,
-  `password` text NOT NULL
+  `follower` int(11) NOT NULL,
+  `isFollowing` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `followingdata`
 --
 
-INSERT INTO `users` (`id`, `email`, `password`) VALUES
-(1, 'asd@asd.com', '42b886de9eff22197b4ca714066ab21c'),
-(2, 'asd@sad.com', '95f8d188993fbee2e202b595a7b4aec1'),
-(3, 'dovah@gmail.com', '842cbdb5c0fbe55e3172de49f4fdc5ab'),
-(4, 'pranav@pranav.com', '400e1c2241b6f8218fab5e2fe4067f17');
+INSERT INTO `followingdata` (`id`, `follower`, `isFollowing`) VALUES
+(2, 4, 2),
+(7, 4, 3),
+(11, 2, 2),
+(14, 2, 4),
+(15, 3, 4);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `users`
+-- Indexes for table `followingdata`
 --
-ALTER TABLE `users`
+ALTER TABLE `followingdata`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -57,10 +58,10 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT for table `followingdata`
 --
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE `followingdata`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
