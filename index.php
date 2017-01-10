@@ -6,9 +6,10 @@
     if(isset($_GET['page'])){
         if($_GET['page'] == 'feed'){
             include("views/feed.php");
-        }
-        if($_GET['page'] == 'tweets'){
+        }else if($_GET['page'] == 'tweets'){
             include("views/yourTweets.php");
+        }else if($_GET['page'] == 'search'){
+            include("views/search.php");
         }
     }else{
         include("views/home.php");

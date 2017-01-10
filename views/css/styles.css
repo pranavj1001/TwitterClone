@@ -165,3 +165,7 @@ nav.navbar{
 #tweetFailure{
     display: none;
 }
+
+.searchString{
+    font-size: 25px;
+}

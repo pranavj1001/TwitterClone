@@ -94,6 +94,9 @@
             if(heading.innerHTML === "Your Tweets"){
                 headingNumber = 2;
             }
+            if(heading.innerHTML === "Search Results"){
+                headingNumber = 3;
+            }
             var count = 0;
             setInterval(function(){
                 if(count == 4){
@@ -103,6 +106,8 @@
                         heading.innerHTML = "Tweets for You";
                     if(headingNumber == 2)
                         heading.innerHTML = "Your Tweets";
+                    if(headingNumber == 3)
+                        heading.innerHTML = "Search Results";
                     count = 0;
                 }else{
                     heading.innerHTML += ".";

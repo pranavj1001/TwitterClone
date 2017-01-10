@@ -77,6 +77,12 @@
 
                 }
 
+            }else if($type == "search"){
+                
+                echo '<p class="searchString">Showing results for "'.mysqli_real_escape_string($link, $_GET['query']).'"</p>';
+                
+                $whereClause = "WHERE tweet LIKE '%".mysqli_real_escape_string($link, $_GET['query'])."%' ";
+                
             }
 
             $query = "SELECT * FROM tweets ".$whereClause." ORDER BY `datetime` DESC";
@@ -143,6 +149,10 @@
 
                 $endQuery = 1;
 
+            }else if($type == "search"){
+                
+                $endQuery = 0;
+                
             }
 
             $query = "SELECT * FROM tweets ".$whereClause." ORDER BY `datetime` DESC";
@@ -199,12 +209,13 @@
 
 
     function displaySearch(){
-        echo '<div class="form-inline searchArea">
+        echo '<form class="form-inline searchArea">
               <div class="form-group">
-                <input type="text" class="form-control inputStyle" id="searchBox" placeholder="Search">
+                <input type="hidden" name="page" value="search">
+                <input type="text" name="query" class="form-control inputStyle" id="searchBox" placeholder="Search">
               </div>
               <button type="submit" class="btn btn-primary">Search</button>
-             </div>';
+             </form>';
     }
 
     function displayTweetBox(){
