@@ -10,6 +10,8 @@
             include("views/yourTweets.php");
         }else if($_GET['page'] == 'search'){
             include("views/search.php");
+        }else if($_GET['page'] == 'users'){
+            include("views/users.php");
         }
     }else{
         include("views/home.php");

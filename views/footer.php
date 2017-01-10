@@ -87,7 +87,10 @@
         //wrote the code below in pure js because I just wanted to test myself, to see if I still remember the syntax ;)
         window.onload = function(){
             var heading = document.getElementById("homeHeading");
-            var headingNumber = 0;
+            var headingNumber = 5;
+            if(heading.innerHTML === "Recent Tweets"){
+                headingNumber = 0;
+            }
             if(heading.innerHTML === "Tweets for You"){
                 headingNumber = 1;
             }
@@ -97,23 +100,30 @@
             if(heading.innerHTML === "Search Results"){
                 headingNumber = 3;
             }
+            if(heading.innerHTML === "Users"){
+                headingNumber = 4;
+            }
             var count = 0;
-            setInterval(function(){
-                if(count == 4){
-                    if(headingNumber == 0)
-                        heading.innerHTML = "Recent Tweets";
-                    if(headingNumber == 1)
-                        heading.innerHTML = "Tweets for You";
-                    if(headingNumber == 2)
-                        heading.innerHTML = "Your Tweets";
-                    if(headingNumber == 3)
-                        heading.innerHTML = "Search Results";
-                    count = 0;
-                }else{
-                    heading.innerHTML += ".";
-                    count++;
-                }
-            },1000);
+            if(headingNumber != 5){
+                setInterval(function(){
+                    if(count == 4){
+                        if(headingNumber == 0)
+                            heading.innerHTML = "Recent Tweets";
+                        if(headingNumber == 1)
+                            heading.innerHTML = "Tweets for You";
+                        if(headingNumber == 2)
+                            heading.innerHTML = "Your Tweets";
+                        if(headingNumber == 3)
+                            heading.innerHTML = "Search Results";
+                        if(headingNumber == 4)
+                            heading.innerHTML = "Users";
+                        count = 0;
+                    }else{
+                        heading.innerHTML += ".";
+                        count++;
+                    }
+                },1000);
+            }
         };
         
         $(".toggleFollow").click(function(){

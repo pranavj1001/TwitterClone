@@ -43,6 +43,7 @@
         global $link;
         $whereClause = "";
         $endQuery = 0;
+        $noTweetsForThisUser = 0;
         
         if(isset($_SESSION['id'])){
         
@@ -83,6 +84,20 @@
                 
                 $whereClause = "WHERE tweet LIKE '%".mysqli_real_escape_string($link, $_GET['query'])."%' ";
                 
+            }else if (is_numeric($type)){
+                
+                $userQuery = "SELECT * FROM users WHERE id = ".mysqli_real_escape_string($link, $type)." LIMIT 1";
+
+                $userQueryResult = mysqli_query($link, $userQuery);
+
+                $user = mysqli_fetch_assoc($userQueryResult);
+                
+                echo "<h2 class='heading'>".mysqli_real_escape_string($link, $user['email'])."'s Tweets</h2>";
+                
+                $whereClause = "WHERE userid = ".mysqli_real_escape_string($link, $type);
+                
+                $noTweetsForThisUser = 1;
+                
             }
 
             $query = "SELECT * FROM tweets ".$whereClause." ORDER BY `datetime` DESC";
@@ -90,10 +105,19 @@
             $result = mysqli_query($link, $query);
 
             if(mysqli_num_rows($result) == 0){
+                
+                if($noTweetsForThisUser == 1){
+                    
+                    echo "<p class='display'>No tweets found from this user :(</p>";
+                    
+                }else{
 
-                echo "There are no tweets right now to show. Why don't you start tweeting? :)";
+                    echo "<p class='display'>There are no tweets right now to show. Why don't you start tweeting? :)</p>";
+                
+                }
 
             }else{
+                
                 while($row = mysqli_fetch_assoc($result)){
 
                     $userQuery = "SELECT * FROM users WHERE id = ".mysqli_real_escape_string($link, $row['userid'])." LIMIT 1";
@@ -159,6 +183,20 @@
                 
                 $endQuery = 0;
                 
+            }else if (is_numeric($type)){
+                
+                $userQuery = "SELECT * FROM users WHERE id = ".mysqli_real_escape_string($link, $type)." LIMIT 1";
+
+                $userQueryResult = mysqli_query($link, $userQuery);
+
+                $user = mysqli_fetch_assoc($userQueryResult);
+                
+                echo "<h2 class='heading'>".mysqli_real_escape_string($link, $user['email'])."'s Tweets</h2>";
+                
+                $whereClause = "WHERE userid = ".mysqli_real_escape_string($link, $type);
+                
+                $noTweetsForThisUser = 1;
+                
             }
 
             $query = "SELECT * FROM tweets ".$whereClause." ORDER BY `datetime` DESC";
@@ -171,9 +209,18 @@
                 
             }else if(mysqli_num_rows($result) == 0){
 
-                echo "<p class='display'>There are no tweets right now to show. Why don't you start tweeting? :)</p>";
+                if($noTweetsForThisUser == 1){
+                    
+                    echo "<p class='display'>No tweets found from this user :(</p>";
+                    
+                }else{
+
+                    echo "<p class='display'>There are no tweets right now to show. Why don't you start tweeting? :)</p>";
+                
+                }
 
             }else{
+                
                 while($row = mysqli_fetch_assoc($result)){
 
                     $userQuery = "SELECT * FROM users WHERE id = ".mysqli_real_escape_string($link, $row['userid'])." LIMIT 1";
@@ -225,6 +272,31 @@
                 
             }
             
+        }
+        
+    }
+
+
+    function displayUsers(){
+        
+        global $link;
+        
+        $query = "SELECT * FROM users";
+
+        $result = mysqli_query($link, $query);
+
+        if(mysqli_num_rows($result) == 0){
+
+            echo "<p class='display'>Sorry, There are no users on our site. Would you like to be our first user :)</p>";
+
+        }else{
+            
+            while($row = mysqli_fetch_assoc($result)){
+                
+                echo "<p class='display'><a href='?page=users&userid=".$row['id']."'>".$row['email']."</a></p>";
+                
+            }
+        
         }
         
     }
