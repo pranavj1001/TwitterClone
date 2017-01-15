@@ -1,4 +1,3 @@
-
     <footer class="footer">
         <div class="container">
             <p>&copy; Pranav Jain 1st Jan 2017 (Happy New Year) 01:23:34 </p>
@@ -39,6 +38,25 @@
               or
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary" id="loginOrSignup">Log in</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Delete Message</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="modalText">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="refreshAfterDelete">Close</button>
           </div>
         </div>
       </div>
@@ -130,6 +148,8 @@
             
             var id = $(this).attr("data-userId");
             
+            //alert(id);
+            
             $.ajax({
                 type: "POST",
                 url: "actions.php?actions=toggleFollow",
@@ -168,14 +188,26 @@
             
             var id = $(this).attr("data-id");
             
+            //alert(id);
+            
             $.ajax({
                 type: "POST",
                 url: "actions.php?actions=deleteTweet",
                 data:"id=" + id,
                 success: function(result){
-                    alert(result);
+                    if(result == "1"){
+                        $("#modalText").html("Delete was Successful");
+                    }else{
+                        $("#modalText").html("Delete was not Successful");
+                    }
                 }
             });
+            
+        });
+        
+        $("#refreshAfterDelete").click(function(){
+            
+            location.reload();
             
         });
         

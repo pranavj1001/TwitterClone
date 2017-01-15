@@ -159,7 +159,7 @@
                         
                         if($row['userid'] == $_SESSION['id']){
                         
-                        echo "<button class='btn btn-outline-danger deleteButton' data-id'".$row['id']."'>Delete</button>";
+                            echo "<button class='btn btn-outline-danger deleteButton' data-toggle='modal' data-target='#deleteModal' data-id='".$row['id']."'>Delete</button>";
                             
                         }
                         
