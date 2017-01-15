@@ -169,3 +169,7 @@ nav.navbar{
 .searchString, .display{
     font-size: 25px;
 }
+
+.deleteButton{
+    float: right;
+}

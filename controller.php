@@ -54,15 +54,14 @@
             }else if($type == "isFollowing"){
 
                 if(isset($_SESSION['id'])){
-                    $followData = mysqli_real_escape_string($link, $_SESSION['id]);
 
-                    $query = "SELECT * FROM followingdata WHERE follower = {$followData}";
+                    $query = "SELECT * FROM followingdata WHERE follower = ".mysqli_real_escape_string($link, $_SESSION['id']);
 
                     $result = mysqli_query($link, $query);
 
                     while($row = mysqli_fetch_assoc($result)){
 
-                        if(empty($whereClause))
+                        if($whereClause == "")
                             $whereClause = "WHERE ";
                         else
                             $whereClause .= " OR ";
@@ -75,7 +74,7 @@
 
                 if(isset($_SESSION['id'])){
 
-                    $whereClause = "WHERE userid = $followData";
+                    $whereClause = "WHERE userid = ".mysqli_real_escape_string($link, $_SESSION['id']);
 
                 }
 
@@ -154,7 +153,15 @@
 
                     }
 
-                    echo "</button></p></div>";
+                    echo "</button>";
+                    
+                    if(isset($_SESSION['id'])){
+                        
+                        echo "<button class='btn btn-outline-danger deleteButton'>Delete</button>";
+                        
+                    }
+                    
+                    echo "</p></div>";
 
                 }
             }
