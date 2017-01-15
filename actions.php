@@ -89,8 +89,8 @@
 
     if($_GET['actions'] == 'deleteTweet'){
         //echo "Delete Successful ".$_POST['id'];
-//        $query = "DELETE FROM tweets WHERE  id = '".$_POST['id']."' LIMIT 1";
-//        $result = mysqli_query($link, $query);
+        $query = "DELETE FROM tweets WHERE  id = '".$_POST['id']."' LIMIT 1";
+        $result = mysqli_query($link, $query);
         if(true)
             echo "1";
         else
