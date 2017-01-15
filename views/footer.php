@@ -164,6 +164,21 @@
             
         });
         
+        $(".deleteButton").click(function(){
+            
+            var id = $(this).attr("data-id");
+            
+            $.ajax({
+                type: "POST",
+                url: "actions.php?actions=deleteTweet",
+                data:"id=" + id,
+                success: function(result){
+                    alert(result);
+                }
+            });
+            
+        });
+        
     </script>
 
   </body>

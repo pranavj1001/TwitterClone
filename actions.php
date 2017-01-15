@@ -87,4 +87,8 @@
         }
     }
 
+    if($_GET['actions'] == 'deleteTweet'){
+        echo "Delete Successful";
+    }
+
 ?>
