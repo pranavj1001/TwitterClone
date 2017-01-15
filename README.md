@@ -36,7 +36,7 @@ The Model-View-Controller (MVC) is an architectural pattern that separates an ap
 
 * **View Profiles** - Users can simply view profiles of other users and their respective tweets.
 
-* **Delete, Share Tweets** - (WIP)
+* **Delete Tweets** - (New 15th Jan 2017) Now, with a click of a button users can now delete their tweets.
 
 ##Languages
 
