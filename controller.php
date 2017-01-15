@@ -157,7 +157,11 @@
                     
                     if(isset($_SESSION['id'])){
                         
+                        if($row['userid'] == $_SESSION['id']){
+                        
                         echo "<button class='btn btn-outline-danger deleteButton'>Delete</button>";
+                            
+                        }
                         
                     }
                     
