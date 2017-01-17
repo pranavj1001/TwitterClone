@@ -1,25 +1,40 @@
 <?php
+    
+    //Here different actions and their respective functions are stored.
 
     include("controller.php");
     
+    //loginSignup action
     if($_GET['actions'] == "loginSignup"){
         
         $error = "";
         
+        //if email field is empty
         if(!$_POST['email']){
+            
             $error = "An email address is required";
+        
+        //if password field is empty
         }else if(!$_POST['password']){
+            
             $error = "A password is required";
+        
+        //if not a valid email is used
         }else if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) === false) {
+            
             $error = "Please enter a valid email address";
+            
         }
         
+        //discontinue if error is there
         if($error != ""){
             echo $error;
             exit();
         }
         
+        //if user wants to sign up
         if($_POST['loginActive'] == "0"){
+            
             $query = "SELECT * FROM users WHERE email = '".mysqli_real_escape_string($link, $_POST['email'])."' LIMIT 1";
             $result = mysqli_query($link, $query);
             if(mysqli_num_rows($result) > 0){
@@ -34,7 +49,8 @@
                 }else{
                     $error = "Sorry, our bad! Couldn't add ya, Please try again later";
                 }
-            }           
+            }
+        //if user wants to log in  
         }else{
             $query = "SELECT * FROM users WHERE email = '".mysqli_real_escape_string($link, $_POST['email'])."' LIMIT 1";
             $result = mysqli_query($link, $query);
@@ -53,10 +69,12 @@
         }
         
     }
-
+    
+    //action for toggleFollow
+    //used to follow/unfollow users
     if($_GET['actions'] == 'toggleFollow'){
-        if(isset($_SESSION['id'])){
-            //if(!($_SESSION['id'] == $_POST['userId'])){
+        
+        if(isset($_SESSION['id']))
                 $query = "SELECT * FROM followingdata WHERE follower = '".mysqli_real_escape_string($link, $_SESSION['id'])."' AND isFollowing = '".mysqli_real_escape_string($link, $_POST['userId'])."' LIMIT 1";
                 $result = mysqli_query($link, $query);
                 if(mysqli_num_rows($result) > 0){
@@ -69,11 +87,11 @@
                     if($check)
                         echo "2";
                 }
-           // }
         }
+
     }
 
-
+    //action for posting a tweet
     if($_GET['actions'] == 'postTweet'){
         if(!$_POST['tweetContent']){
             echo "Snap! We didn't found any content in your tweet";
@@ -86,7 +104,8 @@
             echo "1";
         }
     }
-
+    
+    //action for deleting a tweet
     if($_GET['actions'] == 'deleteTweet'){
         //echo "Delete Successful ".$_POST['id'];
         $query = "DELETE FROM tweets WHERE  id = '".$_POST['id']."' LIMIT 1";
