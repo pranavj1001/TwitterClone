@@ -54,6 +54,25 @@ The Model-View-Controller (MVC) is an architectural pattern that separates an ap
 
 ![Alt text](ScreenshotHomePage.png?raw=true "Home Page")
 
+
+##Import the database
+
+1. Install Xampp
+2. Go to this link: http://localhost/phpmyadmin/
+3. Select the import tab button
+4. Select the Browse button
+5. Search and Open the "twitterdatabase.sql" file
+
+Congratulations! you just created the database.
+
+##Common Questions
+
+Note:You need to have Xampp installed on your machine.
+
+* I'm getting an error in this line: $link = mysqli_connect("localhost", "root", "", "twitterdatabase"); - This error is because you don't have the database on your pc.
+
+* How to view the TwitterClone? - Copy the files of this repo in the "htdocs" folder of the installed "xampp" folder. Then using this link http://localhost/TwitterClone/ you can view the TwitterClone.
+
 ##Queries?
 
 email me at pranavj1001@gmail.com
