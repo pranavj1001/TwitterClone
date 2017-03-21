@@ -18,7 +18,7 @@ Hey there,
 
 The Model-View-Controller (MVC) is an architectural pattern that separates an application into three main logical components: the model, the view, and the controller. Each of these components are built to handle specific development aspects of an application. MVC is one of the most frequently used industry-standard web development framework to create scalable and extensible projects.
 
-##Features
+## Features
 
 * **Login/Signup system**
 
@@ -40,7 +40,7 @@ The Model-View-Controller (MVC) is an architectural pattern that separates an ap
 
 * **Delete Tweets** - (New 15th Jan 2017) Now, with a click of a button users can now delete their tweets.
 
-##Languages
+## Languages
 
 * PHP
 
@@ -50,12 +50,12 @@ The Model-View-Controller (MVC) is an architectural pattern that separates an ap
 
 * HTML
 
-##ScreenShot
+## ScreenShot
 
 ![Alt text](ScreenshotHomePage.png?raw=true "Home Page")
 
 
-##Import the database
+## Import the database
 
 1. Install Xampp
 2. Go to this link: http://localhost/phpmyadmin/
@@ -65,7 +65,7 @@ The Model-View-Controller (MVC) is an architectural pattern that separates an ap
 
 Congratulations! you just created the database.
 
-##Common Questions
+## Common Questions
 
 Note:You need to have Xampp installed on your machine.
 
@@ -73,7 +73,7 @@ Note:You need to have Xampp installed on your machine.
 
 * How to view the TwitterClone? - Copy the files of this repo in the "htdocs" folder of the installed "xampp" folder. Then using this link http://localhost/TwitterClone/ you can view the TwitterClone.
 
-##Queries?
+## Queries?
 
 email me at pranavj1001@gmail.com
 
